@@ -6,7 +6,6 @@ function quiz(){
   "Does anybody in your family have Diabetes?", 
   "How would you describe your diet?"] ;
 
-  //var noOfOptions=4;
 
   var answers=[
   ["1-25", "26-40", "41-60", "60+"],
@@ -19,6 +18,8 @@ function quiz(){
   [0, 0, 9, 10], 
   [0, 7, 15, 15], 
   [0, 0, 7, 10]];
+
+
 
   var q= 0 ;
 
@@ -35,7 +36,7 @@ function quiz(){
       
 
 
-      for (var p=0; p<answers.length; p++){
+      for (var p=0; p<answers[i].length; p++){
 
 
       	 var buttonIndex=p+1 ;
@@ -58,22 +59,14 @@ function quiz(){
 
      q++ ;
 
-                
-
-
-         	
-
-      
-
-
-
-
-      
-
-     
+                  
 
 }
 }
 
 
 window.onload=quiz ;
+
+
+
+//Reference: JavaScript multidimensional array : http://stackoverflow.com/questions/7545641/javascript-multidimensional-array
