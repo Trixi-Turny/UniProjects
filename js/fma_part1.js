@@ -22,6 +22,7 @@ function quiz(){
 
 
   var q= 0 ;
+  var buttonIndex=0 ;
 
   for (var i=0; i< questions.length ; i++){
 
@@ -39,7 +40,7 @@ function quiz(){
       for (var p=0; p<answers[i].length; p++){
 
 
-      	 var buttonIndex=p+1 ;
+      	 
 
          
          var button=document.createElement("input") ;
@@ -54,6 +55,9 @@ function quiz(){
          var labelText=answers[q][p] ;
          label.innerHTML=labelText ;
          title.appendChild(label) ;
+         buttonIndex=buttonIndex+1 ;
+
+       
 
       }
 
@@ -62,6 +66,8 @@ function quiz(){
                   
 
 }
+
+alert(buttonIndex) ;
 }
 
 
