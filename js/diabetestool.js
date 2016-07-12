@@ -1,3 +1,11 @@
+/*Javascript FMA -  Part 1 - Diabetes Tool
+  Student Id: Bturny01
+  Student No: 13025638
+  Tutor Name: Tobi Brody
+  Submission Deadline: 09-08-2016 */
+
+
+
 function quiz(){
 
   var questions=[

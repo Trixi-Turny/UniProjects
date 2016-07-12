@@ -1,0 +1,181 @@
+#form{
+	margin: 0 auto ;
+	width: 100% ;
+	background-color: #e6f2ff;
+	overflow: hidden ;
+
+}
+
+
+
+.formcontrol{
+	
+	display: block ;
+	margin: 0em auto ;
+	
+	padding: 2em 0em 
+  
+}
+
+
+
+
+
+label{
+
+	float: left ;
+	width: 30% ;
+	margin:.5em 1em;
+	text-align: right ;
+	color: #00004d;
+	font-family: tahoma;
+	font-size: .8em ;
+	
+}
+
+input{
+
+	width: 20% ;
+	padding: .5em ;
+	color:#0f240f;
+	border-radius: 1px 1px 1px 1px ;
+
+	
+	 
+}
+
+select{
+
+	width: 10% ;
+	
+
+	
+
+ 
+
+}
+ label.radio{
+
+	margin-top:-.4em ;
+	text-align: right ;
+	color:#999966;
+
+
+}
+input[type=radio]{
+
+	width: 5% ;
+	
+	
+}
+
+input[type=submit]{
+
+	width: 50px;
+
+	border-radius: 1px 1px ;
+	box-shadow: 1px 1px .5px 0.5px #236841 ;
+	background-color:#999966 ;
+	color:#ffffff;
+	font-weight: bold ;
+
+}	
+
+
+.errorDiv{
+
+ float: right;
+ width: 44%;
+ 
+ overflow: hidden;
+
+
+
+
+
+}
+
+
+#fnameValid, #snameValid, #telValid, #emailValid, #hanValid{
+  display: none;
+  text-align: left;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto ;
+
+
+}
+
+/*label.errorMsg{
+
+
+	display: none;
+
+	
+
+
+
+
+}*/
+
+.placeHolder{
+
+
+	display: none;
+}
+
+
+span.redStar{
+
+
+	color: #FF0000;
+}
+
+#toolTipContainer{
+  
+    
+    display: none ;
+
+       position: relative;
+    display: inline-block;
+
+  
+
+
+
+
+
+
+}
+#toolTipText{
+
+
+    background-color: #00004d;
+    color: #fff;
+  
+    width: 120px;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+ 
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+
+
+#info{
+margin: 0 auto ;
+
+overflow: hidden ;
+
+
+
+
+
+
+}
+
+
+

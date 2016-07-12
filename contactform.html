@@ -1,0 +1,121 @@
+<!doctype html>
+
+
+<!--Javascript FMA -  Part 1 - Contact Form
+	Student Id: Bturny01
+	Student No: 13025638
+	Tutor Name: Tobi Brody
+	Submission Deadline: 09-08-2016-->
+
+
+<html lang="en">
+
+
+
+<head>
+     <meta charset="utf-8">
+     <title>FMA</title>
+     <link href="css/diabetestool.css" rel="stylesheet">
+     <script src="js/contactform.js">
+     </script>
+</head>
+
+
+<body>
+   <h1>Contact Us</h1>
+
+
+
+   <form method="post", action="#">
+
+     <fieldset id="form">
+    
+    
+
+        <div class="formcontrol">
+          
+             <label for="fname"><span class="redStar">*</span>
+                <span  class="placeHolder" id="egFname">e.g. John</span>First Name:</label>
+
+            <input class="fieldToTest"  required type="text" name= "fname" id="fname"/>
+
+            <div class="errorDiv">
+               <label id="fnameValid" class="errorMsg">*Please enter a valid First Name</label></div>
+       </div>
+
+
+       <div class="formcontrol">
+             <label for="sname"><span class="redStar">*</span>Last Name:</label>
+
+             <input class="fieldToTest" required type="text" name= "sname" id="sname"/>  
+
+             <div class="errorDiv">
+                <label  id="snameValid" class="errorMsg">*Please enter a valid Last Name</label>
+            </div> 
+      </div>
+        
+       <div class="formcontrol">
+             <label for="title">Title:</label>
+             <select name="title" id="title">
+              <option value="1">Mr.</option>
+              <option value="2">Ms.</option>
+              <option value="3">Mrs.</option>
+              <option value="4">Miss</option>
+              <option value="5">Master</option>
+            </select>
+       </div>
+
+
+     
+      
+
+       <div class="formcontrol">
+
+       <div id="toolTipContainer" class="info"><p id="toolTipText">If you do not know your ZHA number, please
+  contact your GP</p>
+       </div>
+
+
+              <label for="han"><span class="redStar">*</span>Health Authority Number:</label> 
+
+              <input class="fieldToTest" required type="text" name= "han" id="han"/>   <img id="info" src="images/tooltip.png" width="20px" height="20px" alt="#"/> 
+  
+             <div class="errorDiv">
+                  <label for="han" id="hanValid" class="errorMsg">*Please enter a valid Health Authority Number.</label>
+             </div> 
+       </div>
+
+        <div class="formcontrol">
+             <label for="email"><span class="redStar">*</span>Email Address:</label>
+     
+             <input class="fieldToTest" required type="email" name= "email" id="email"/> 
+           
+             <div class="errorDiv">
+                  <label  id="emailValid" class="errorMsg">*Please enter a valid Email Address</label>
+            </div>   
+        </div>
+
+         <div class="formcontrol">
+              <label for="tel">Telephone Number:</label>
+              <input class="fieldToTest" type="text" name= "tel" id="tel"/>
+               <div class="errorDiv">
+                    <label  id="telValid" class="errorMsg">*Please enter a valid Phone Number.<br/>The Number should be 11 digits long and contain no spaces or special characters.</label>
+               </div>    
+         </div>
+         
+         <div class="formcontrol">
+
+              <input type="submit" value="Submit" id="submitButton"> 
+              <input type = "submit" value="Clear" id="clearForm">
+         </div>
+
+     </fieldset>
+
+
+
+
+   </form>
+
+
+</body>
+</html>
