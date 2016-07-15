@@ -56,20 +56,20 @@ function textBehaviour() {
 	    write.style.color = "#A8A8A8";
 	    write.style.fontStyle = "italic" ;
 
-}     
-}
+   }     
+  }
 }
 
 
 function toolTip(){
 
 	  document.getElementById('info').onmouseover = function() {
-	  var toolTip = document.getElementById('toolTipContainer') ;
-	  toolTip.style.display='inline' ;
+	    var toolTip = document.getElementById('toolTipContainer') ;
+	    toolTip.style.display='inline' ;
 	  } 	    
 	  document.getElementById('info').onmouseout = function() {
-	  var toolTip = document.getElementById('toolTipContainer') ;
-	  toolTip.style.display='none' ;
+	    var toolTip = document.getElementById('toolTipContainer') ;
+	    toolTip.style.display='none' ;
 	  } 	
 }
 

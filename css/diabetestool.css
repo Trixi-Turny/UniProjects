@@ -1,9 +1,69 @@
-#form{
+
+
+
+
+
+/*CSS Reset*/
+
+
+html, body, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li , img, figcaption, figure{
+
+	margin: 0 ;
+	padding: 0 ;
+	font-size: 100% ;
+	font-family: Verdana ;
+	border: 0 none ;
+	color: #2a48a2;
+
+}
+
+
+article, aside, figcaption, 
+footer, header, nav, section {
+    display: block ; 
+}
+
+
+
+ul, ol {
+
+	list-style-type: none ;
+
+}
+
+header{
 	margin: 0 auto ;
-	width: 100% ;
+    width: 90% ;
+
 	background-color: #e6f2ff;
+}
+
+
+#wrapper{
+	margin: 0 auto ;
+    background-color: #c2cdef;
+    width: 90% ;
+
+
+}
+
+#diabetes{
+
+    width: 50%;
+	font-size: 1.5em ;
+	padding: 2em ;
+	text-align: center ;
+}
+
+
+#form{
+
+	
+	
+	
 	overflow: hidden ;
 
+   padding: 1em 0em 2em 0em ;
 }
 
 
@@ -17,28 +77,45 @@
   
 }
 
+.row{
 
 
+	margin: .4em  auto ;
+}
+
+fieldset{
+
+    margin: 1em auto ;
+    width:60% ;
+	border: none ;
+}
+
+legend{
+
+	font-size: 1.3em ;
+	text-align: left;
+	font-weight: bold ;
+}
 
 
 label{
 
 	float: left ;
 	width: 30% ;
-	margin:.5em 1em;
+	padding-right: 1em ;
 	text-align: right ;
-	color: #00004d;
-	font-family: tahoma;
-	font-size: .8em ;
 	
-}
 
+
+
+	}
 input{
 
 	width: 20% ;
 	padding: .5em ;
 	color:#0f240f;
 	border-radius: 1px 1px 1px 1px ;
+
 
 	
 	 
@@ -47,9 +124,6 @@ input{
 select{
 
 	width: 10% ;
-	
-
-	
 
  
 
@@ -121,61 +195,56 @@ input[type=submit]{
 .placeHolder{
 
 
-	display: none;
+	display: none ;
 }
 
 
 span.redStar{
 
 
-	color: #FF0000;
+	color: #FF0000 ;
 }
 
 #toolTipContainer{
-  
-    
-    display: none ;
 
-       position: relative;
-    display: inline-block;
+    position: relative ;
+    display: inline-block ;
 
-  
-
-
-
-
-
+ 
 
 }
+
+
+
 #toolTipText{
 
 
-    background-color: #00004d;
-    color: #fff;
+    background-color: #00004d ;
+    color: #fff ;
   
-    width: 120px;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
+    width: 120px ;
+    text-align: center ; 
+    padding: 5px 0 ;
+    border-radius: 6px ;
  
     /* Position the tooltip text - see examples below! */
-    position: absolute;
-    z-index: 1;
+    position: absolute 	;
+    z-index: 1 ;
 }
 
 
 
 #info{
-margin: 0 auto ;
+	margin: 0 auto ;
 
-overflow: hidden ;
-
-
-
-
-
+	overflow: hidden ;
 
 }
 
 
+#confirmScore p {
 
+
+	display: none;
+
+}
