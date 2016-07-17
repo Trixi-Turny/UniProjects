@@ -28,7 +28,6 @@ function addEventListeners(){
        elements[i].addEventListener("change", checkForm ) ;
        elements[i].addEventListener("focus", hideErrorMsg ) ;
 
-
    }
 
 
@@ -82,14 +81,11 @@ function checkForm(event){
 
 
    // console.log("is this working?", event, this) ;
-   if( this.value==""){
+   if(( this.value=="")||(this.value.length<=1)){
      var errorId=this.getAttribute("id") ;
      var errorMessage=document.getElementById(errorId+"Valid") ;
      errorMessage.style.color="#FF0000" ;
      errorMessage.style.display="inline" ;
-
-     console.log("checkForm :: show error",errorId ) ;
-    // errorMessag
 
    }
 
@@ -111,6 +107,13 @@ function checkForm(event){
 
  }
 
+function formValidation(){
+   
+
+
+
+
+}
 
 /*var fieldToTest=["fname", "sname", "han" , "email", "tel"] ;
 var errorMessage= document.getElementsByClassName("errorMsg") ;

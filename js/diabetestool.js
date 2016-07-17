@@ -69,15 +69,17 @@ function quizResult(event) {
 
 
   message.style.display = "block";
-  sectionToReplace.parentNode.replaceChild(message, sectionToReplace) ;
-  message.style.padding="6em 10em 20em 10em" ;
-  message.style.color="#2929a3" ;
+  sectionToReplace.parentNode.appendChild(message, sectionToReplace) ;
+  message.style.padding="3em 10em 6em 10em" ;
+  message.style.color="#1a3365" ;
   message.style.fontWeight= "bold" ;
   message.style.fontSize="1.2em" ;
   message.style.lineHeight="2em" ;
   message.style.textAlign="center" ;
-
-
+  message.style.backgroundColor="#e6f2ff" ;
+  document.getElementById("footer").style.backgroundColor="#c2cdef" ;
+  document.getElementById("submit").style.marginBottom="-2.5em" ;
+  
 
 
 }

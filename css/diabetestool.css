@@ -8,7 +8,6 @@
 
 
 
-/*CSS Reset*/
 
 
 html, body, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li , img, figcaption, figure{
@@ -67,29 +66,31 @@ h1{
     background-color: #c2cdef;
     width: 100% ;
     padding-top: 4em ;
-
-
 }
 
 #formSection{
 
 	margin: 0 auto ;
 	padding-bottom: 4em;
-
-
-
-
 }
 
 
-#form{
+#diabetesform{
 
    overflow: hidden ;
 
    padding: 4em 0em 4em 0em ;
 }
 
+#contactForm{
+   overflow: hidden ;
+   padding: 4em 0em 4em 0em ;
+   margin-left: -10% ;
 
+ 
+
+
+}
 
 .formcontrol{
 	
@@ -97,7 +98,6 @@ h1{
 	margin: 0em auto ;
 	
 	padding: 2em 0em 
-  
 }
 
 .row{
@@ -109,7 +109,7 @@ h1{
 fieldset{
     
     margin: 0em auto 2.5em auto ;
-    width:80% ;
+    width:100% ;
 	border: none ;
 	
 }
@@ -150,8 +150,8 @@ input{
 
 .formcontrol input{
 
-	width: 20% ;
-	padding: .5em ;
+	width: 15% ;
+	padding: .5em 1em ;
 	color: #0f240f;
 	border-radius: 1px 1px 1px 1px ;
 	text-align: left;
@@ -164,13 +164,13 @@ input{
 
 
 	width: 40% ;
-	padding: .5em ;
+	padding: .25em 1em  ;
 	color:	#1a3365 ;
 	border-radius: 1px 1px 1px 1px ;
-	text-align: right;
-	
+	text-align: right ;	
 
 }
+
 select{
 
 	width: 10% ;
@@ -183,7 +183,6 @@ select{
 	margin-top:-.4em ;
 	text-align: right ;
 	color: #152951;
-
 }
 
 
@@ -205,7 +204,6 @@ input[type=submit]{
     font-weight: normal;
     position:relative;
     text-align: center;
-
 }
 
 #submit{
@@ -214,21 +212,16 @@ input[type=submit]{
 	width: 100% ;
 	margin-left: 50% ;
 	margin-bottom: 1.5em ;
-
 }
 
 
 .errorDiv{
 
  float: right;
- width: 44%;
+ width: 40%;
  
+
  overflow: hidden;
-
-
-
-
-
 }
 
 
@@ -238,21 +231,12 @@ input[type=submit]{
   width: 100%;
   overflow: hidden;
   margin: 0 auto ;
+ 
 
 
 }
 
-/*label.errorMsg{
 
-
-	display: none;
-
-	
-
-
-
-
-}*/
 
 
 .placeHolder{
@@ -276,9 +260,9 @@ span.redStar{
 	width: 20%;
 	height: 20% ;
 	
-	margin-right: 12%;
+	margin-right: 15%;
 	margin-top: -6%	;
-	overflow: allowed ;
+	
 
 }
 
@@ -311,15 +295,26 @@ span.redStar{
 #confirmScore  { 
 
 	display: none;
-	
+	color: 	#1a3365;
+
 }
 
-#result15  {
+#result15, #result25. #resultOver26  {
 
 
     padding: 2em;
+
+
 	
 }
+
+strong{
+
+	font-size: 1.5em;
+	color:#660033;
+
+}
+
 
 
 a.contact:link, a.contact:visited{
