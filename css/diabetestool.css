@@ -1,4 +1,9 @@
 
+/*Javascript FMA -  CSS
+	Student Id: Bturny01
+	Student No: 13025638
+	Tutor Name: Tobi Brody
+	Submission Deadline: 09-08-2016*/
 
 
 
@@ -69,6 +74,7 @@ h1{
 #formSection{
 
 	margin: 0 auto ;
+	padding-bottom: 4em;
 
 
 
@@ -113,12 +119,13 @@ legend{
 	font-size: 1.3em ;
 	text-align: left;
 	font-weight: bold ;
-	margin: 1	em 0em;
+	margin: 1.5em 0em;
 	text-align: center;
 	margin-left: 20%;
 	color: 	#1a3365;
 
 }
+
 
 
 label{
@@ -328,5 +335,15 @@ a.contact:hover, a.contact:active {
 
 }
 
+#footer{
+	margin: 0 auto ;
+	overflow: hidden ;
+    width: 100% ;
+	background-color: #e6f2ff;
+	padding: 3em 0em;
+	text-align: center;
+	font-size: .8em ;
 
+
+}
 
