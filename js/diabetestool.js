@@ -1,4 +1,4 @@
-/*Javascript FMA -  Part 1 - Diabetes Tool
+  /*Javascript FMA -  Part 1 - Diabetes Tool
   Student Id: Bturny01
   Student No: 13025638
   Tutor Name: Tobi Brody
@@ -52,6 +52,7 @@ function calculateScore() {
 function quizResult(event) {
   var result = calculateScore();
   var message = "";
+  var sectionToReplace=document.getElementById("formSection")
 
   if (result <= 15) {
     message = document.getElementById("result15");
@@ -60,7 +61,7 @@ function quizResult(event) {
 
     message = document.getElementById("result25");
 
-  } 
+  }   
   else {
 
     message = document.getElementById("resultOver26");
@@ -68,6 +69,16 @@ function quizResult(event) {
 
 
   message.style.display = "block";
+  sectionToReplace.parentNode.replaceChild(message, sectionToReplace) ;
+  message.style.padding="6em 8em 20em 8em" ;
+  message.style.color="#2929a3" ;
+  message.style.fontWeight= "bold" ;
+  message.style.fontSize="1.2em" ;
+  message.style.lineHeight="2em" ;
+  message.style.textAlign="center" ;
+
+
+
 
 }
 

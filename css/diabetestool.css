@@ -33,37 +33,54 @@ ul, ol {
 
 header{
 	margin: 0 auto ;
-    width: 90% ;
-
+	overflow: hidden ;
+    width: 100% ;
 	background-color: #e6f2ff;
+	padding: 5em 0em;
+
+	
+
 }
+
+h1{
+
+	font-size: 1.8em ;
+    width: 100%;
+	color:#660033;
+	margin: 0 auto ;
+	line-height: 2.2em ;
+	padding: 0em 0em ;
+	text-align: center ;
+	overflow: hidden ;
+
+}
+
 
 
 #wrapper{
 	margin: 0 auto ;
     background-color: #c2cdef;
-    width: 90% ;
+    width: 100% ;
+    padding-top: 4em ;
 
 
 }
 
-#diabetes{
+#formSection{
 
-    width: 50%;
-	font-size: 1.5em ;
-	padding: 2em ;
-	text-align: center ;
+	margin: 0 auto ;
+
+
+
+
 }
 
 
 #form{
 
-	
-	
-	
-	overflow: hidden ;
+   overflow: hidden ;
 
-   padding: 1em 0em 2em 0em ;
+   padding: 4em 0em 4em 0em ;
 }
 
 
@@ -80,14 +97,15 @@ header{
 .row{
 
 
-	margin: .4em  auto ;
+	margin: .5em  auto ;
 }
 
 fieldset{
-
-    margin: 1em auto ;
-    width:60% ;
+    
+    margin: 0em auto 2.5em auto ;
+    width:80% ;
 	border: none ;
+	
 }
 
 legend{
@@ -95,65 +113,102 @@ legend{
 	font-size: 1.3em ;
 	text-align: left;
 	font-weight: bold ;
+	margin: 1	em 0em;
+	text-align: center;
+	margin-left: 20%;
+	color: 	#1a3365;
+
 }
 
 
 label{
 
 	float: left ;
-	width: 30% ;
+	width: 50% ;
 	padding-right: 1em ;
 	text-align: right ;
+	color: 	#1a3365;
 	
-
-
-
 	}
 input{
 
-	width: 20% ;
+	width: 50% ;
 	padding: .5em ;
 	color:#0f240f;
 	border-radius: 1px 1px 1px 1px ;
-
-
-	
+	text-align: left;
 	 
 }
 
+
+.formcontrol input{
+
+	width: 20% ;
+	padding: .5em ;
+	color: #0f240f;
+	border-radius: 1px 1px 1px 1px ;
+	text-align: left;
+
+
+}
+
+
+.formcontrol label{
+
+
+	width: 40% ;
+	padding: .5em ;
+	color:	#1a3365 ;
+	border-radius: 1px 1px 1px 1px ;
+	text-align: right;
+	
+
+}
 select{
 
 	width: 10% ;
 
- 
-
 }
+
+
  label.radio{
 
 	margin-top:-.4em ;
 	text-align: right ;
-	color:#999966;
-
+	color: #152951;
 
 }
+
+
 input[type=radio]{
 
 	width: 5% ;
-	
-	
 }
 
 input[type=submit]{
 
-	width: 50px;
 
-	border-radius: 1px 1px ;
-	box-shadow: 1px 1px .5px 0.5px #236841 ;
-	background-color:#999966 ;
-	color:#ffffff;
-	font-weight: bold ;
+    border-radius: 5px;
+    border: 0;
+    width: 80px;
+    height:25px;
+    font-family: Tahoma;
+    background: #e6f2ff;
+    color:#660033 ;
+    font-weight: normal;
+    position:relative;
+    text-align: center;
 
-}	
+}
+
+#submit{
+
+
+	width: 100% ;
+	margin-left: 50% ;
+	margin-bottom: 1.5em ;
+
+}
 
 
 .errorDiv{
@@ -192,6 +247,7 @@ input[type=submit]{
 
 }*/
 
+
 .placeHolder{
 
 
@@ -207,10 +263,15 @@ span.redStar{
 
 #toolTipContainer{
 
-    position: relative ;
-    display: inline-block ;
-
- 
+   
+    display: none;
+	float: right;
+	width: 20%;
+	height: 20% ;
+	
+	margin-right: 12%;
+	margin-top: -6%	;
+	overflow: allowed ;
 
 }
 
@@ -218,33 +279,54 @@ span.redStar{
 
 #toolTipText{
 
-
+    
     background-color: #00004d ;
     color: #fff ;
-  
-    width: 120px ;
+    width: 100%;
+    height: 100%;
     text-align: center ; 
     padding: 5px 0 ;
-    border-radius: 6px ;
- 
-    /* Position the tooltip text - see examples below! */
-    position: absolute 	;
-    z-index: 1 ;
+    border-radius: 6px 6px 6px 0px;
+    font-size: .8em ;
+  
+
 }
 
 
 
 #info{
 	margin: 0 auto ;
-
 	overflow: hidden ;
 
 }
 
 
-#confirmScore p {
-
+#confirmScore  { 
 
 	display: none;
+	
+}
+
+#result15  {
+
+
+    padding: 2em;
+	
+}
+
+
+a.contact:link, a.contact:visited{
+	color: #b30047 ;
+	text-decoration: none ;
 
 }
+
+a.contact:hover, a.contact:active {
+	color: #660033  ;
+	text-decoration: underline;
+	font-weight: bold ;
+
+}
+
+
+
