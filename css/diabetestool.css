@@ -219,10 +219,11 @@ input[type=submit]{
 
  float: right;
  width: 40%;
- 
+
 
  overflow: hidden;
 }
+
 
 
 #fnameValid, #snameValid, #telValid, #emailValid, #hanValid{
@@ -231,7 +232,7 @@ input[type=submit]{
   width: 100%;
   overflow: hidden;
   margin: 0 auto ;
- 
+  color: #FF0000 ;  
 
 
 }
@@ -341,4 +342,6 @@ a.contact:hover, a.contact:active {
 
 
 }
+
+
 
