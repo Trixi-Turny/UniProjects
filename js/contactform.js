@@ -37,11 +37,14 @@ function addEventListeners(){
 //       placeHolder[p].addEventListener("change", textBehaviour ) ;
 
 // }
+   var clear = document.getElementById("clearForm").addEventListener("submit", hideErrorMsg) ;
    var elements=document.getElementsByClassName("fieldToTest") ;
    for ( var i=0; i< elements.length;  i++){
        elements[i].addEventListener("change", checkForm ) ;
        elements[i].addEventListener("focus", hideErrorMsg ) ;
+       elements[i].addEventListener("blur", checkForm ) ;
        elements[i].addEventListener("blur", hideErrorMsg ) ;
+       
 
    }
 
@@ -60,19 +63,10 @@ function clearForm(event){
      for ( var i=0; i< elements.length;  i++){
 
        original=elements[i].getAttribute("id") ;
-       if (original=="fname"){
-          elements[i].value=document.getElementById("eg_fname").innerHTML ;
+       if ((original=="fname")||(original=="han")){
+          elements[i].value=document.getElementById("eg_"+original).innerHTML ;
           elements[i].style.color = "#A8A8A8";
           elements[i].style.fontStyle = "italic" ;
-       }
-
-       else if (original=="han"){
-          elements[i].value=document.getElementById("eg_han").innerHTML ;
-          elements[i].style.color = "#A8A8A8";
-          elements[i].style.fontStyle = "italic" ;
-
-
-
        }
 
        else{
@@ -80,13 +74,14 @@ function clearForm(event){
        elements[i].value="" ;
 
       }
+
+     
        var errorId=elements[i].getAttribute("id") ;
        var errorMessage=document.getElementById(errorId+"Valid") ;
-
        errorMessage.style.display="none";
     }
 
-
+    
   event.preventDefault() ;  
   }) ;  
 
@@ -175,17 +170,38 @@ function toolTip(){
 
 
 function checkForm(event){
+   var allowSubmit=true ;
+   var regExInputId=this.getAttribute("id") ;
+   if(this.value.length===1){
 
-
-
-   // console.log("is this working?", event, this) ;
-   if(( this.value=="")||(this.value.length<=1)){
-     var errorId=this.getAttribute("id") ;
-     var errorMessage=document.getElementById(errorId+"Valid") ;
-     errorMessage.style.color="#FF0000" ;
-     errorMessage.style.display="inline" ;
+     showErrorMsg(regExInputId) ;
+     
+     
 
    }
+
+   else if (regExInputId==="fname"){
+
+         var regEx =/^[A-Za-z]\w+/;    //regEx for fname - a-z and one word
+         var firstName= document.getElementById(regExInputId).value; 
+         console.log(firstName) ;
+         if(!regEx.test(firstName)){
+            var errorMessage=document.getElementById(regExInputId+"Valid") ;  
+
+            console.log(errorMessage) ;
+
+   //          errorMessage.innerHTML="First Name can only consist of letters and should be at least 2 characters long." ;
+   //          errorMessage.style.color="#FF0000" ;
+   //          errorMessage.style.display="inline" ;
+   // }
+
+
+}
+      }
+
+//    } else if (regex).test(x)
+// var emailField = document.getElementById('my-email')
+// var emailVal = emailField.innerHTML;
 
  }
 
@@ -200,21 +216,19 @@ function checkForm(event){
      errorMessage.style.display="none";
    }
 
-     else if (this.value.length===1){
 
+ }
+
+ function showErrorMsg(regExInputId){
+   
+     
+     var errorMessage=document.getElementById(regExInputId+"Valid") ;
+     errorMessage.style.color="#FF0000" ;
      errorMessage.style.display="inline";
 
    }
 
-    else {
 
-     errorMessage.style.display="none";
-
-    }   
-     console.log("hideErrorMsg :: hide error",errorId ) ;
-    // errorMessag
-
- }
 
 // var string = "sample1";
 // var re = new RegExp("^([a-z0-9]{5,})$");
@@ -223,6 +237,16 @@ function checkForm(event){
 // } else {
 //     console.log("Invalid");
 // }
+// function regExCheck(event){
+//   var allowSubmit=true ;
+//   var fnameRegEx =/^[A-Za-z]\w+/;
+//   var firstName= document.getElementById("fname").value; 
+//   if(!fnameRegEx.test(firstName){  
 
+    
+//     allowsubmit = false;
+
+
+// }
 
 window.onload = init ;
