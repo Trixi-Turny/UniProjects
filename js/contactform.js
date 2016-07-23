@@ -175,6 +175,7 @@ function checkForm(event) {
   var allowSubmit = true;
   var inputId = this.getAttribute("id");
   var fieldToTest = document.getElementById(inputId);
+  var regEx ;
 
   if (this.value === "") {
 
@@ -195,12 +196,18 @@ function checkForm(event) {
     if (inputId === "fname") {
 
 
-      var regEx = /^[A-Za-z]\w+/; //regEx for fname - a-z and one word
+      regEx = /^[a-zA-Z][a-zA-Z\\s]+$/; //regEx for fname - a-z and one word  //Ref: http://www.codeproject.com/Questions/378515/validation-expression-for-name-in-regular-expressi
     }  
 
     else if(inputId==="sname") {
 
-      var regEx=/[^()[\]{}*&^%$#@!0-9]+/ ;
+     regEx=/^([a-z]+(?:-[a-z]+)?)$/;   //Ref: http://stackoverflow.com/questions/21437032/php-regex-match-only-a-word-or-a-hyphenated-word
+    }
+
+    else if(inputId==="han"){
+      regEx=/^[ZHA]+([0-9]{6})$/ ;
+
+
     }
     
     var fieldToTest = document.getElementById(inputId).value;
@@ -216,6 +223,7 @@ function checkForm(event) {
         console.log("Valid");
         hideErrorMsg(inputId);
       }
+
     }
 
 
