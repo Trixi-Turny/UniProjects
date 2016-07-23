@@ -40,13 +40,14 @@
 
         <div class="formcontrol">
           
-             <label for="fname"><span class="redStar">*</span>
-                <span  class="placeHolder" id="eg_fname">e.g. John</span>First Name:</label>
+             <label id= "fnameLabel" for="fname"><span class="redStar">*</span><span  class="placeHolder" id="eg_fname">e.g. John</span>First Name:</label>
 
             <input class="fieldToTest plcHolder" required type="text" name= "fname" id="fname"/>
 
             <div class="errorDiv">
-               <label id="fnameValid" class="errorMsg">*Please enter a valid First Name</label></div>
+               <p id="fnameValid" class="errorMsg">*Please enter a valid First Name</p>
+               <p id="fnameRequired" class="errorMsg">*This is a required field</p>
+            </div>
        </div>
 
 
@@ -56,7 +57,8 @@
              <input class="fieldToTest" required type="text" name= "sname" id="sname"/>  
 
              <div class="errorDiv">
-                <label  id="snameValid" class="errorMsg">*Please enter a valid Last Name</label>
+                <p  id="snameValid" class="errorMsg">*Please enter a valid Last Name</p>
+                <p id="snameRequired" class="errorMsg">*This is a required field</p>
             </div> 
       </div>
         
@@ -77,17 +79,19 @@
 
        <div class="formcontrol">
 
-       <div id="toolTipContainer" class="info"><p id="toolTipText">If you do not know your ZHA number, please
-  contact your GP</p>
-       </div>
+
 
 
               <label for="han"><span class="redStar">*</span><span  class="placeHolder" id="eg_han">e.g. ZHA123456</span>Health Authority Number:</label> 
 
-              <input class="fieldToTest plcHolder" required type="text" name= "han" id="han"/>   <img id="info" src="images/tooltip.png" width="20px" height="20px" alt="#"/> 
+              <input class="fieldToTest plcHolder" required type="text" name= "han" id="han"/><div id="icon"><img id="info" src="images/tooltip.png" alt="#"/>       
+              <div id="toolTipContainer" class="info"><p id="toolTipText">If you do not know your ZHA number, please
+  contact your GP</p>
+       </div> </div>
   
              <div class="errorDiv">
-                  <label for="han" id="hanValid" class="errorMsg">*Please enter a valid Health Authority Number.</label>
+                  <p id="hanValid" class="errorMsg">*Please enter a valid Health Authority Number.</p>
+                  <p id="hanRequired" class="errorMsg">*This is a required field</p>
              </div> 
        </div>
 
@@ -97,7 +101,8 @@
              <input class="fieldToTest" required type="email" name= "email" id="email"/> 
            
              <div class="errorDiv">
-                  <label  id="emailValid" class="errorMsg">*Please enter a valid Email Address</label>
+                  <p  id="emailValid" class="errorMsg">*Please enter a valid Email Address</p>
+                  <p id="emailRequired" class="errorMsg">*This is a required field</p>
             </div>   
         </div>
 
@@ -105,7 +110,8 @@
               <label for="tel">Telephone Number:</label>
               <input class="fieldToTest" type="text" name= "tel" id="tel"/>
                <div class="errorDiv">
-                    <label  id="telValid" class="errorMsg">*Please enter a valid Phone Number.<br/>The Number should be 11 digits long and contain no spaces or special characters.</label>
+                    <p  id="telValid" class="errorMsg">*Please enter a valid Phone Number.<br/>The Number should be 11 digits long and contain no spaces or special characters.</p>
+                    <p id="telRequired" class="errorMsg"></p>
                </div>    
          </div>
          

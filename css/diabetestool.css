@@ -155,6 +155,7 @@ input{
 	color: #0f240f;
 	border-radius: 1px 1px 1px 1px ;
 	text-align: left;
+	overflow: hidden;
 
 
 }
@@ -226,7 +227,7 @@ input[type=submit]{
 
 
 
-#fnameValid, #snameValid, #telValid, #emailValid, #hanValid{
+#fnameValid, #snameValid, #telValid, #emailValid, #hanValid, #fnameRequired, #snameRequired, #emailRequired, #hanRequired{
   display: none;
   text-align: left;
   width: 100%;
@@ -256,30 +257,37 @@ span.redStar{
 #toolTipContainer{
 
    
-    display: none;
+/*    display: none;
 	float: right;
 	width: 20%;
 	height: 20% ;
 	
-	margin-right: 15%;
-	margin-top: -6%	;
-	
+		margin-right: 15%;
+		margin-top: -6%	;*/
+
+	position:absolute;
+	top: -81px;
+	right: -106px;
+	z-index: 2 ;
 
 }
 
 
 
-#toolTipText{
 
+#toolTipText{
+ 
     
     background-color: #00004d ;
     color: #fff ;
     width: 100%;
     height: 100%;
     text-align: center ; 
-    padding: 5px 0 ;
+    padding: 5px 5px ;
     border-radius: 6px 6px 6px 0px;
     font-size: .8em ;
+    width: 100%;
+    height: 100%;
   
 
 }
@@ -289,9 +297,20 @@ span.redStar{
 #info{
 	margin: 0 auto ;
 	overflow: hidden ;
+	width: 25px;
+	height: 25px;
 
 }
 
+#icon{
+   margin: .25em ;
+   display: inline ;
+  
+	position:relative ;
+	width:10px;
+	overflow:visible ;
+	z-index: 1 ;
+}
 
 #confirmScore  { 
 
