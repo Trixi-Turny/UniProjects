@@ -168,6 +168,12 @@ function toolTip() {
   }
 }
 
+function toUpperCase(inputId) {
+  var makeUpperCase=document.getElementById(inputId) ;
+  makeUpperCase.value= makeUpperCase.value.toUpperCase().replace(/ /g,'');  //Ref: http://jsbin.com/pibaquri/2/edit?html,js,output
+  return inputId ;
+}
+
 
 
 
@@ -205,11 +211,23 @@ function checkForm(event) {
     }
 
     else if(inputId==="han"){
-      regEx=/^[ZHA]+([0-9]{6})$/ ;
+      inputId=toUpperCase(inputId) ;
+    
 
+      regEx=/^ZHA[0-9]{6}$/ ;  
+      
+    }
 
+    else if(inputId==="email"){
+
+      regEx=/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;  //REF: Cohaesus
     }
     
+    // else if(inputId==="tel"){
+
+
+    //   regEx=
+    // }
     var fieldToTest = document.getElementById(inputId).value;
       
       if (!regEx.test(fieldToTest)) {
