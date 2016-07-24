@@ -223,11 +223,11 @@ function checkForm(event) {
       regEx=/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;  //REF: Cohaesus
     }
     
-    // else if(inputId==="tel"){
+    else if(inputId==="tel"){
 
 
-    //   regEx=
-    // }
+      regEx=/^[0-9]{11}$/ ;
+    }
     var fieldToTest = document.getElementById(inputId).value;
       
       if (!regEx.test(fieldToTest)) {
