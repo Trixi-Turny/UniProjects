@@ -19,7 +19,7 @@ function init() {
   onSubmitBehaviour();
   clearForm();
   textBehaviour();
-
+  setFocus() ;
 
 
 }
@@ -35,11 +35,11 @@ function addEventListeners() {
   //       placeHolder[p].addEventListener("change", textBehaviour ) ;
 
   // }
-  var clear = document.getElementById("clearForm").addEventListener("submit", hideErrorMsg);
+  // var clear = document.getElementById("clearForm").addEventListener("submit", hideErrorMsg);
   var elements = document.getElementsByClassName("fieldToTest");
   for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener("change", checkForm);
-    elements[i].addEventListener("focus", hideErrorMsg);
+    elements[i].addEventListener("focus", hideErrorMsgOnFocus);
     elements[i].addEventListener("blur", checkForm);
 
 
@@ -64,30 +64,35 @@ function clearForm(event) {
     var elements = document.getElementsByClassName("fieldToTest");
     for (var i = 0; i < elements.length; i++) {
 
-      original = elements[i].getAttribute("id");
-      if ((original == "fname") || (original == "han")) {
+      var inputId = elements[i].getAttribute("id");
+      var original=inputId ;
+      if ((original === "email") || (original === "han")) {
         elements[i].value = document.getElementById("eg_" + original).innerHTML;
         elements[i].style.color = "#A8A8A8";
         elements[i].style.fontStyle = "italic";
+        
       } 
       else {
 
         elements[i].value = "";
+       
 
       }
 
 
-      var errorId = elements[i].getAttribute("id");
-      var errorMessage = document.getElementById(errorId + "Valid");
-      var requiredErrorMessage = document.getElementById(errorId + "Required");
-      errorMessage.style.display = "none";
-      requiredErrorMessage.style.display = "none";
+      // var errorMessage = document.getElementById(errorId + "Valid");
+      // var requiredErrorMessage = document.getElementById(errorId + "Required");
+      // errorMessage.style.display = "none";
+      // requiredErrorMessage.style.display = "none";
+      hideErrorMsg(inputId) ;
     }
-
+    
 
     event.preventDefault();
-  });
+    setFocus() ;
 
+  });
+  
 }
 
 function onSubmitBehaviour(event) {
@@ -177,6 +182,34 @@ function toUpperCase(inputId) {
 
 
 
+function checkFname(){
+   var inputId=document.getElementById("fname");
+   var regEx=/^[a-zA-Z][a-zA-Z\\s]+$/ ;
+   if (inputId.value===""){
+       showErrorMsgRequired(inputId) ;
+       return false ;
+
+    }  
+
+    else if(inputId.value.length===1){
+
+      showErrorMsg(inputId) ;
+
+      return false ;
+
+    }
+    else if(!regEx.test(inputId.value)){
+       return true ;
+       hideErrorMsg(inputId) ;
+}
+    else{
+
+      return false ;
+    }
+
+
+}
+
 function checkForm(event) {
   var allowSubmit = true;
   var inputId = this.getAttribute("id");
@@ -250,18 +283,36 @@ function checkForm(event) {
   }
 
 
+  function setFocus(){
+    fieldToFocus=document.getElementById("fname") ;
+    fieldToFocus.focus() ;
+   
+
+
+    
+  }
+
+
   //    } else if (regex).test(x)
   // var emailField = document.getElementById('my-email')
   // var emailVal = emailField.innerHTML;
 
 
+function hideErrorMsgOnFocus(event){
+  var inputId= event.target.id ;
+  hideErrorMsg(inputId) ;
+
+}
+
 
 
 function hideErrorMsg(inputId) {
+
   var errorMessage = document.getElementById(inputId + "Valid");
   var requiredErrorMessage = document.getElementById(inputId + "Required")
     //var errorId=this.getAttribute("id") ;
-  errorMessage.style.display = "none";
+    console.log(inputId);
+  errorMessage.style.display = "none"; 
   requiredErrorMessage.style.display = "none";
 
 }
