@@ -1,0 +1,145 @@
+<!Doctype HTML>
+
+<!--Javascript FMA -  Part 1 - Diabetes Tool 
+	Student Id: Bturny01
+	Student No: 13025638
+	Tutor Name: Tobi Brody
+	Submission Deadline: 09-08-2016-->
+
+
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My questionnaire</title>
+  <link href="css/diabetestool.css" rel="stylesheet">
+  <script src="js/diabetestool.js">
+  </script>
+  <script>
+
+  </script>
+</head>	
+  <body>
+  	<header>
+  		<h1 id="diabetes">What is your risk of developing Diabetes?</h1>
+  	</header>
+
+
+    <div id="wrapper">
+  	<section id="formSection">
+		<form id="diabetesForm" action="#" method="post">		  
+		  <fieldset>
+		  	<legend>How old are you?</legend>	
+
+		  	<div class="row">
+			  <input type="radio" class="radioButton" id="option0" checked name="age" value="0"/>
+			  <label for="option0">1-25</label>
+			</div>
+			<div class="row">
+			  <input type="radio" class="radioButton" id="option1" name="age" value="5"/>
+			  <label for="option1">26-40</label>
+			</div>
+			<div class="row">
+			  <input type="radio" class="radioButton" id="option2" name="age" value="8"/>
+			  <label for="option2">41-60</label>
+			</div>
+			<div class="row">
+			  <input type="radio" class="radioButton" id="option3" name="age" value="10"/>
+			  <label for="option3">60+</label>
+			</div>
+
+		  </fieldset>
+
+		  <fieldset>
+			<legend>What is your BMI?</legend>
+
+			<div class="row">
+				<input type="radio" class="radioButton" id="option4" checked name="bmi" value="0"/>
+				<label for="option4">0-25</label>
+			</div>	 
+            <div class="row">
+			  <input type="radio" class="radioButton" id="option5" name="bmi" value="0"/>
+			  <label for="option5">26-30</label>
+			</div>
+			<div class="row"> 
+			  <input type="radio" class="radioButton" id="option6" name="bmi" value="9"/>
+			  <label for="option6">31-35</label>
+			</div>
+			<div class="row">  
+			  <input type="radio" class="radioButton" id="option7" name="bmi" value="10"/>
+			  <label for="option7">35+</label>
+			</div>
+
+		  </fieldset>
+
+		  <fieldset>
+
+			<legend>Does anybody in your family have Diabetes?</legend>
+
+			<div class="row">
+			  <input type="radio" class="radioButton" id="option8" checked name="history" value="0"/>
+			  <label for="option8">No.</label>
+			</div>
+			<div class="row">
+			  <input type="radio" class="radioButton" id="option9" name="history" value="7"/>
+			  <label for="option9">Grandparent</label>
+			</div>
+			<div class="row">
+			  <input type="radio" class="radioButton" id="option10" name="history" value="15"/>
+			  <label for="option10">Sibling</label>
+			</div>
+			<div class="row">
+			  <input type="radio" class="radioButton" id="option11" name="history" value="15"/>
+			  <label for="option11">Parent</label>
+			</div>
+
+		  </fieldset>
+
+		  <fieldset>
+
+			<legend>How would you describe your diet?</legend>
+
+            <div class="row">
+			  <input type="radio" class="radioButton" id="option12" checked name="diet" value="0"/>
+			  <label for="option12">Low Sugar</label>
+			</div>
+			<div class="row">
+			  <input type="radio" class="radioButton" id="option13" name="diet" value="0"/>
+			  <label for="option13">Normal Sugar</label>
+			</div>
+			<div class="row">
+			  <input type="radio" class="radioButton" id="option14" name="diet" value="7"/>
+			  <label for="option14">Quite High Sugar</label>
+			</div>
+			<div class="row">
+			  <input type="radio" class="radioButton" id="option15" name="diet" value="10"/>
+			  <label for="option15">High Sugar</label>
+			</div>
+
+          </fieldset>
+
+            <div id="submit"> 
+
+             <input id="submitButton" type="submit" value="Calculate">
+            </div> 
+         </form>
+         </section>
+
+          <section id="confirmScore">
+             
+
+		     <p id="result15"><strong>Your Result:</strong></br></br></br>Your results show that you currently have a low risk of developing diabetes.</br> However, it is important that you maintain a healthy lifestyle in terms of diet and exercise.</p>
+
+ 			 <p id="result25"><strong>Your Result:</strong></br></br></br><Your results show that you currently have a medium risk of developing diabetes.</br> For more information on your risk factors, and what to do about them, please visit our diabetes advice website at <a class="contact" target= "_blank" href="http://www.zha.org.zd">http://www.zha.org.zd</a>.</p>
+
+			 <p id="resultOver26" ><strong>Your Result:</strong></br></br></br>Your results show that you currently have a HIGH risk of developing diabetes.</br> Your main risk factors are your BMI and your diet. We advise that you contact the Health Authority to discuss your risk factors as soon as you can. Please fill in our <a class="contact" target="_blank" href="contactform.html">contact form</a> and a member of the Health Authority Diabetes Team will be in contact with you. </p> 
+
+          </section>  
+          </div>
+          <footer id="footer">
+          	<p>Copyright 2016</p>  
+          </footer>
+
+  </body>
+
+</html>

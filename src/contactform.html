@@ -1,0 +1,139 @@
+<!doctype html>
+
+
+<!--Javascript FMA -  Part 1 - Contact Form
+	Student Id: Bturny01
+	Student No: 13025638
+	Tutor Name: Tobi Brody
+	Submission Deadline: 09-08-2016-->
+
+
+<html lang="en">
+
+
+
+<head>
+     <meta charset="utf-8">
+     <title>FMA</title>
+     <link href="css/diabetestool.css" rel="stylesheet">
+     <script src="js/contactform.js">
+     </script>
+</head>
+
+
+<body>
+
+  <header>
+  <h1 id="diabetes">Contact your Health Authority</h1>
+  </header>
+
+  <div id="wrapper">
+   
+
+
+   
+   <form id="contactForm" method="post", action="#">
+
+     <fieldset>
+     <legend class="contactForm">Contact Form</legend>
+    
+
+        <div class="formcontrol">
+          
+             <label id= "fnameLabel" for="fname"><span class="redStar">*</span>First Name:</label>
+
+            <input class="fieldToTest" required type="text" name= "fname" id="fname"/>
+
+            <div class="errorDiv">
+               <p id="fnameValid" class="errorMsg">*Please enter a valid First Name</p>
+               <p id="fnameRequired" class="errorMsg">*This is a required field</p>
+            </div>
+       </div>
+
+
+       <div class="formcontrol">
+             <label for="sname"><span class="redStar">*</span>Last Name:</label>
+
+             <input class="fieldToTest" required type="text" name= "sname" id="sname"/>  
+
+             <div class="errorDiv">
+                <p  id="snameValid" class="errorMsg">*Please enter a valid Last Name</p>
+                <p id="snameRequired" class="errorMsg">*This is a required field</p>
+            </div> 
+      </div>
+        
+       <div class="formcontrol">
+             <label for="title">Title:</label>
+             <select name="title" id="title">
+              <option value="1">Mr.</option>
+              <option value="2">Ms.</option>
+              <option value="3">Mrs.</option>
+              <option value="4">Miss</option>
+              <option value="5">Master</option>
+            </select>
+       </div>
+
+
+     
+      
+
+       <div class="formcontrol">
+
+
+
+
+              <label for="han"><span class="redStar">*</span><span  class="placeHolder" id="eg_han">e.g. ZHA123456</span>Health Authority Number:</label> 
+
+              <input class="fieldToTest plcHolder" required type="text" name= "han" id="han"/><div id="icon"><img id="info" src="images/tooltip.png" alt="#"/>       
+              <div id="toolTipContainer" class="info"><p id="toolTipText">If you do not know your ZHA number, please
+  contact your GP</p>
+       </div> </div>
+  
+             <div class="errorDiv">
+                  <p id="hanValid" class="errorMsg">*Please enter a valid Health Authority Number.</br>Your number should start with the letters ZHA and 6 digits. </p>
+                  <p id="hanRequired" class="errorMsg">*This is a required field</p>
+             </div> 
+       </div>
+
+        <div class="formcontrol">
+             <label for="email"><span class="redStar">*</span><span  class="placeHolder" id="eg_email">john.doe@example.com</span>Email Address:</label>
+     
+             <input class="fieldToTest plcHolder" required type="email" name= "email" id="email"/> 
+           
+             <div class="errorDiv">
+                  <p  id="emailValid" class="errorMsg">*Please enter a valid Email Address</p>
+                  <p id="emailRequired" class="errorMsg">*This is a required field</p>
+            </div>   
+        </div>
+
+         <div class="formcontrol">
+              <label for="tel">Telephone Number:</label>
+              <input class="fieldToTest" type="text" name= "tel" id="tel"/>
+               <div class="errorDiv">
+                    <p  id="telValid" class="errorMsg">*Please enter a valid Phone Number.<br/>The Number should be 11 digits long and contain no spaces or special characters.</p>
+                    <p id="telRequired" class="errorMsg"></p>
+               </div>    
+         </div>
+         
+         <div id="submit" class="formcontrol">
+
+              <input type = "submit" value="Clear" id="clearForm">
+              <input type="submit" value="Submit" id="submitButton"> 
+              
+         </div>
+
+     </fieldset>
+
+
+
+
+   </form>
+
+</div>
+
+<footer id="footer">
+
+  <p>Copyright 2016</p>
+</footer>  
+</body>
+</html>
