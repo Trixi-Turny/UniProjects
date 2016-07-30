@@ -16,7 +16,7 @@
      <meta charset="utf-8">
      <title>FMA</title>
      <link href="css/diabetestool.css" rel="stylesheet">
-     <script src="js/contactform.js">
+     <script src="js/contactformNew.js">
      </script>
 </head>
 
@@ -45,8 +45,8 @@
             <input class="fieldToTest" required type="text" name= "fname" id="fname"/>
 
             <div class="errorDiv">
-               <p id="fnameValid" class="errorMsg">*Please enter a valid First Name</p>
-               <p id="fnameRequired" class="errorMsg">*This is a required field</p>
+               <p id="fnameValid" class="errorMsg"></p>
+            
             </div>
        </div>
 
@@ -57,8 +57,8 @@
              <input class="fieldToTest" required type="text" name= "sname" id="sname"/>  
 
              <div class="errorDiv">
-                <p  id="snameValid" class="errorMsg">*Please enter a valid Last Name</p>
-                <p id="snameRequired" class="errorMsg">*This is a required field</p>
+                <p  id="snameValid" class="errorMsg"></p>
+               
             </div> 
       </div>
         
@@ -80,29 +80,27 @@
        <div class="formcontrol">
 
 
-
-
               <label for="han"><span class="redStar">*</span><span  class="placeHolder" id="eg_han">e.g. ZHA123456</span>Health Authority Number:</label> 
-
-              <input class="fieldToTest plcHolder" required type="text" name= "han" id="han"/><div id="icon"><img id="info" src="images/tooltip.png" alt="#"/>       
-              <div id="toolTipContainer" class="info"><p id="toolTipText">If you do not know your ZHA number, please
+          <div id="toolTipContainer" class="info"><p id="toolTipText">If you do not know your ZHA number, please
   contact your GP</p>
-       </div> </div>
+          </div> 
+          <input class="fieldToTest plcHolder" required type="text" name= "han" id="han"/><div id="icon"><img id="info" src="images/tooltip.png" alt="#"/>       
+          </div>
   
              <div class="errorDiv">
-                  <p id="hanValid" class="errorMsg">*Please enter a valid Health Authority Number.</br>Your number should start with the letters ZHA and 6 digits. </p>
-                  <p id="hanRequired" class="errorMsg">*This is a required field</p>
+                  <p id="hanValid" class="errorMsg"></p>
+                 
              </div> 
        </div>
 
         <div class="formcontrol">
-             <label for="email"><span class="redStar">*</span><span  class="placeHolder" id="eg_email">john.doe@example.com</span>Email Address:</label>
+             <label for="email"><span class="redStar">*</span><span    class="placeHolder" id="eg_email">john.doe@example.com</span>Email Address:</label>
      
              <input class="fieldToTest plcHolder" required type="email" name= "email" id="email"/> 
            
              <div class="errorDiv">
-                  <p  id="emailValid" class="errorMsg">*Please enter a valid Email Address</p>
-                  <p id="emailRequired" class="errorMsg">*This is a required field</p>
+                  <p  id="emailValid" class="errorMsg"></p>
+                 
             </div>   
         </div>
 
@@ -110,8 +108,9 @@
               <label for="tel">Telephone Number:</label>
               <input class="fieldToTest" type="text" name= "tel" id="tel"/>
                <div class="errorDiv">
-                    <p  id="telValid" class="errorMsg">*Please enter a valid Phone Number.<br/>The Number should be 11 digits long and contain no spaces or special characters.</p>
-                    <p id="telRequired" class="errorMsg"></p>
+                    <p  id="telValid" class="errorMsg"></p>
+                       
+
                </div>    
          </div>
          

@@ -76,15 +76,13 @@ function textBehaviourBlur(event){
   
   if (inputText.value===""){
 
-    console.log(inputText) ;
-
     inputText.value=placeHolderText.innerHTML;
 
     console.log (placeHolderText.innerHTML);
     inputText.style.color = "#A8A8A8";
     inputText.style.fontStyle = "italic";
 
-    showErrorMsgRequired(inputId) ;
+    // showErrorMsgRequired(inputId) ;
   }
 
 }
@@ -129,57 +127,6 @@ function placeHolderLoad(){
 
 
 
-// function textBehaviour() {
-
-//   var placeHolder = document.getElementsByClassName("placeHolder");
-//   var inputWithplaceHolder = document.getElementsByClassName("plcHolder");
-
-   
-//   inputWithplaceHolder[0].value = placeHolder[0].innerHTML;
-//   inputWithplaceHolder[0].style.color = "#A8A8A8";
-//   inputWithplaceHolder[0].style.fontStyle = "italic";
-
-//   inputWithplaceHolder[0].onfocus = function() {
-//     if (inputWithplaceHolder[0].value === placeHolder[0].innerHTML) {
-//       inputWithplaceHolder[0].value = "";
-//       inputWithplaceHolder[0].style.color = "#000";
-//       inputWithplaceHolder[0].style.fontStyle = "normal";
-//     }
-//   }
-
-//   inputWithplaceHolder[0].onblur = function() {
-//     if (inputWithplaceHolder[0].value === "") {
-//       inputWithplaceHolder[0].value = placeHolder[0].innerHTML;
-//       inputWithplaceHolder[0].style.color = "#A8A8A8";
-//       inputWithplaceHolder[0].style.fontStyle = "italic";
-
-//     }
-//   }
-
-
-//   inputWithplaceHolder[1].value = placeHolder[1].innerHTML;
-//   inputWithplaceHolder[1].style.color = "#A8A8A8";
-//   inputWithplaceHolder[1].style.fontStyle = "italic";
-
-//   inputWithplaceHolder[1].onfocus = function() {
-//     if (inputWithplaceHolder[1].value === placeHolder[1].innerHTML) {
-//       inputWithplaceHolder[1].value = "";
-//       inputWithplaceHolder[1].style.color = "#000";
-//       inputWithplaceHolder[1].style.fontStyle = "normal";
-//     }
-//   }
-
-//   inputWithplaceHolder[1].onblur = function() {
-//     if (inputWithplaceHolder[1].value === "") {
-//       inputWithplaceHolder[1].value = placeHolder[1].innerHTML;
-//       inputWithplaceHolder[1].style.color = "#A8A8A8";
-//       inputWithplaceHolder[1].style.fontStyle = "italic";
-
-//     }
-//   }
-// }
-
-
 
 
 function toolTip() {
@@ -195,29 +142,40 @@ function toolTip() {
 }
 
 
-function validator(regEx, element) {
+function validator(regEx, element, placeHolder) {
+  console.log('Calling validator for the ' + element.id + ' element');
+  console.log('v' +  element.id);
+  if (element.value===placeHolder){
+     showErrorMsgRequired(element.id);
+     return false ;
+
+  }
 
 
-   if ((element.value ==="")||(element.value===document.getElementById("eg_"+element.id).innerHTML)){
-       if (element.id==="tel"){
+  else if (element.value ===""){
+        if (element.id==="tel"){
 
+          return true ;
+        }
+        else{
 
-       }
-       showErrorMsgRequired(element.id) ;
-       return false ;
+          showErrorMsgRequired(element.id) ;
+          return false ;
+        }
 
-    }  
-
-    else if(regEx.test(element.value)){
        
-       hideErrorMsg(element.id) ;
-       return true ;
-}
-    else{
+  }
 
-       showErrorMsg(element.id) ;
-      return false ;
-    }
+  else if(regEx.test(element.value)){
+         
+         hideErrorMsg(element.id) ;
+         return true ;
+  }
+   else{
+
+        showErrorMsg(element.id) ;
+        return false ;
+      }
 
 
 
@@ -226,7 +184,7 @@ function validator(regEx, element) {
 
 function checkFname(element){
         //regEx for fname - a-z and one word  //Ref: http://www.codeproject.com/Questions/378515/validation-expression-for-name-in-regular-expressi
-
+console.log('ce' + element);
    var regEx=/^[A-Z][A-Z\s]+$/i ;
 
    return validator(regEx, element) ;
@@ -235,7 +193,7 @@ function checkFname(element){
 }
 
 function checkSname(element){
-  // var inputId=document.getElementById("sname");
+
    var regEx=/^([A-Z]{2,}(?:-[A-Z]{2,})?)$/i;   //Ref: http://stackoverflow.com/questions/21437032/php-regex-match-only-a-word-or-a-hyphenated-word
    return validator(regEx, element) ;
     }
@@ -246,27 +204,24 @@ function checkSname(element){
 
 function checkHan(element){
 
- // var inputId=document.getElementById("han");
    var regEx=/^ZHA[0-9]{6}$/i ;
-   // inputId=toUpperCase(inputId) ;
-   
 
-   return validator(regEx, element) ;
+   var placeHolder=document.getElementById("eg_"+element.id).innerHTML
+ 
+   return validator(regEx, element, placeHolder) ;
 
 }
 
 function checkEmail(element){
 
-   // var inputId=document.getElementById("email");
    var regEx=/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;  //REF: Cohaesus ;
-
-  return validator(regEx, element) ;
+   var placeHolder=document.getElementById("eg_"+element.id).innerHTML
+  return validator(regEx, element, placeHolder) ;
 }
 
 
 function checkPhoneNo(element){
 
-   // var inputId=document.getElementById("tel");
    var regEx= /^[0-9]{11}$/;  //REF: Cohaesus ;
 
   return validator(regEx, element) ;
@@ -315,38 +270,38 @@ function checkForm(event) {
   var submitValidation=[] ;
   for (var i=0; i<elements.length; i++ ){
     var allowSubmit = true;
-    var inputId = elements[i].getAttribute("id");
+    console.log('incheckform' + elements[i].id)
+    var inputId = elements[i].id;
     if (inputId==="fname"){
 
-      var validateFname=checkFname(inputId) ;
+      var validateFname=checkFname(elements[i]) ;
       submitValidation.push(validateFname) ;
-      console.log(checkFname(InputId)) ;
 
     }
  
 
     if (inputId==="sname"){
-
-      var validateSname=checkSname(inputId) ;
+      
+      var validateSname=checkSname(elements[i]) ;
       submitValidation.push(validateSname) ;
     }
 
     if (inputId==="han"){
 
-      var validateHan=checkHan(inputId) ;
+      var validateHan=checkHan(elements[i]) ;
       submitValidation.push(validateHan) ;  
 
     } 
         
     if (inputId==="email"){
 
-      var validateEmail=checkEmail(inputId) ;
+      var validateEmail=checkEmail(elements[i]) ;
       submitValidation.push(validateEmail) ;
      }
 
     if (inputId==="tel"){
 
-      var validateTel=checkPhoneNo(inputId) ;
+      var validateTel=checkPhoneNo(elements[i]) ;
       submitValidation.push(validateTel) ;
 
      }
@@ -389,6 +344,7 @@ function hideErrorMsgOnFocus(event){
 
 
 function hideErrorMsg(inputId) {
+console.log('hem' + inputId);
 
   var errorMessage = document.getElementById(inputId + "Valid");
   var requiredErrorMessage = document.getElementById(inputId + "Required") ;
@@ -400,6 +356,7 @@ function hideErrorMsg(inputId) {
 
 function showErrorMsgRequired(inputId) {
 
+console.log('semr' + inputId);
 
   hideErrorMsg(inputId);
   var errorMessage = document.getElementById(inputId + "Required");
@@ -411,7 +368,6 @@ function showErrorMsgRequired(inputId) {
 }
 
 function showErrorMsg(inputId) {
-
   hideErrorMsg(inputId);
   var errorMessage = document.getElementById(inputId + "Valid");
 
