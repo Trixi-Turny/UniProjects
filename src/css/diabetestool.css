@@ -128,7 +128,7 @@ legend{
 label{
 
 	float: left ;
-	width: 50% ;
+	width: 45% ;
 	padding-right: 1em ;
 	text-align: right ;
 	color: 	#1a3365;
@@ -216,10 +216,11 @@ input[type=submit]{
 .errorDiv{
 
  float: right;
- width: 40%;
+ width: 39%;
 
 
- overflow: hidden;
+ overflow: visible;
+
 }
 
 
@@ -254,8 +255,8 @@ span.redStar{
 #toolTipContainer{
 
    
-/*    display: none;
-	float: right;
+    display: none;
+/*	float: right;
 	width: 20%;
 	height: 20% ;
 	
@@ -352,7 +353,7 @@ a.contact:hover, a.contact:active {
 	overflow: hidden ;
     width: 100% ;
 	background-color: #e6f2ff;
-	padding: 3em 0em;
+	padding: 6em 0em;
 	text-align: center;
 	font-size: .8em ;
 
