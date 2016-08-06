@@ -1,12 +1,3 @@
-var validationLogic=[ 
-  { id:"fname", required:true, errorRequired: 'This is a required field', regEx: /^[A-Z][A-Z\s]+$/i, errorValid: "*Please enter a valid First Name"},
-  { id:"sname", required:true, errorRequired: 'This is a required field', regEx: /^([A-Z]{2,}(?:-[A-Z]{2,})?)$/i, errorValid: "*Please enter a valid Last Name"},
-  { id:"han", required:true, errorRequired: 'This is a required field', regEx: /^ZHA[0-9]{6}$/i, errorValid: "*Please enter a valid Health Authority Number." + "<br/>" + "Your number should start with the letters ZHA and 6 digits.", placeHolder:"e.g. ZHA123456"},
-  { id:"email", required:true, errorRequired: 'This is a required field', regEx: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, errorValid: "*Please enter a valid Email Address.", placeHolder:"john.doe@example.com"},
-  { id: "tel", required: false, regEx: /^[0-9]{11}$/, errorValid: "*Please enter a valid Phone Number." + "<br/>" + "The Number should be 11 digits long and contain no spaces or special characters."}
-
-]
-
 function init() {
 
   toolTip(); //***********************Add an eventlistener and call it that way
@@ -132,38 +123,112 @@ function toolTip() {
 
 
 
-function validateField(field, validation) {
+function validator(regEx, element, errorValid, placeHolder) {
+  var errorRequired = "*This is a required field";
 
-  if ((field.value === "") || (field.value === validation.placeHolder)) {
-    if (validation.required) {
-      showErrorMsgRequired(field, validation.errorRequired);
+  if (element.value === placeHolder) {
+    showErrorMsgRequired(element, errorRequired);
+    return false;
+
+  } else if (element.value === "") {
+    if (element.id === "tel") {
+
+      return true;
+    } else {
+
+      showErrorMsgRequired(element, errorRequired);
       return false;
     }
 
+  } else if (regEx.test(element.value)) {
+
+    hideErrorMsg(element);
+    return true;
   } else {
 
-    if (validation.regEx.test(field.value)) {
-
-      hideErrorMsg(field);
-
-    } else {
-      showErrorMsg(field, validation.errorValid);
-      return false;
-    }
+    showErrorMsg(element, errorValid);
+    return false;
   }
 
-  return true;
 }
+
+
+
+function checkFname(element) {
+  //regEx for fname - a-z and one word  //Ref: http://www.codeproject.com/Questions/378515/validation-expression-for-name-in-regular-expressi
+  var errorValid = "*Please enter a valid First Name";
+  var regEx = /^[A-Z][A-Z\s]+$/i;
+
+  return validator(regEx, element, errorValid);
+
+
+}
+
+function checkSname(element) {
+
+  var regEx = /^([A-Z]{2,}(?:-[A-Z]{2,})?)$/i; //Ref: http://stackoverflow.com/questions/21437032/php-regex-match-only-a-word-or-a-hyphenated-word
+  var errorValid = "*Please enter a valid Last Name";
+
+  return validator(regEx, element, errorValid);
+}
+
+
+
+
+function checkHan(element) {
+
+  var regEx = /^ZHA[0-9]{6}$/i;
+  var errorValid = "*Please enter a valid Health Authority Number." + "<br/>" + "Your number should start with the letters ZHA and 6 digits.";
+  var placeHolder = element.parentElement.children[0].childNodes[1].innerHTML;
+
+  return validator(regEx, element, errorValid, placeHolder);
+
+}
+
+function checkEmail(element) {
+
+  var regEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; //REF: Cohaesus ;
+  var errorValid = "*Please enter a valid Email Address";
+  var placeHolder = element.parentElement.children[0].childNodes[1].innerHTML;
+
+  return validator(regEx, element, errorValid, placeHolder);
+}
+
+
+function checkPhoneNo(element) {
+
+
+  var regEx = /^[0-9]{11}$/; //REF: Cohaesus ;
+  var errorValid = "*Please enter a valid Phone Number." + "<br/>" + "The Number should be 11 digits long and contain no spaces or special characters.";
+
+  return validator(regEx, element, errorValid);
+
+
+}
+
+
 
 function checkFields(event) {
   var inputId = event.target.id;
+  if (inputId === "fname") {
 
-for(var i=0;i<validationLogic.length;++i) {
-  if (inputId == validationLogic[i].id){
-    validateField(event.target, validationLogic[i]);
+    checkFname(event.target);
+  } else if (inputId === "sname") {
+
+    checkSname(event.target);
+  } else if (inputId === "han") {
+
+    checkHan(event.target);
+
+  } else if (inputId === "email") {
+
+    checkEmail(event.target);
+  } else if (inputId === "tel") {
+
+    checkPhoneNo(event.target);
   }
 }
-}
+
 
 
 function checkForm(event) {
@@ -172,12 +237,43 @@ function checkForm(event) {
   submitButton.addEventListener("click", function(event) {
     var elements = document.getElementsByClassName("fieldToTest");
 
-    
+    // var regEx=['/^[A-Z][A-Z\\s]+$/i' , '/^([A-Z]{2,}(?:-[A-Z]{2,})?)$/i', '/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/','/^ZHA[0-9]{6}$/i','/^[0-9]{11}$/' ]
     var submitValidation = [];
     for (var i = 0; i < elements.length; i++) {
       var allowSubmit = true;
-    
-      submitValidation.push(validateField(elements[i], validationLogic[i]));
+      console.log('incheckform' + elements[i].id)
+      var inputId = elements[i].id;
+      if (inputId === "fname") {
+
+        var validateFname = checkFname(elements[i]);
+        submitValidation.push(validateFname);
+      }
+
+      if (inputId === "sname") {
+
+        var validateSname = checkSname(elements[i])
+        submitValidation.push(validateSname);
+      }
+
+      if (inputId === "han") {
+
+        var validateHan = checkHan(elements[i]);
+        submitValidation.push(validateHan);
+
+      }
+
+      if (inputId === "email") {
+
+        var validateEmail = checkEmail(elements[i]);
+        submitValidation.push(validateEmail);
+      }
+
+      if (inputId === "tel") {
+
+        var validateTel = checkPhoneNo(elements[i]);
+        submitValidation.push(validateTel);
+
+      }
     }
 
     if (submitValidation.indexOf(false) > -1) {

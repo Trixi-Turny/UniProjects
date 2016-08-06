@@ -15,8 +15,8 @@
 <head>
   <meta charset="utf-8">
   <title>FMA</title>
-  <link href="css/diabetestool.css" rel="stylesheet">
-  <script src="js/contactformArrays.js">
+  <link href="diabetestool.css" rel="stylesheet">
+  <script src="contactform.js">
   </script>
 </head>
 
@@ -80,12 +80,12 @@
         <div class="formcontrol">
 
 
-          <label for="han"><span class="redStar">*</span><span  class="placeHolder" id="eg_han">e.g. ZHA123456</span>Health Authority Number:</label>
+          <label for="han"><span class="redStar">*</span>Health Authority Number:</label>
           <div id="toolTipContainer" class="info">
-            <p id="toolTipText">If you do not know your ZHA number, please contact your GP</p>
+            <p id="toolTipText">If you do not know your ZHA number<br/> please contact your GP</p>
           </div>
           <input class="fieldToTest plcHolder" required type="text" name="han" id="han" />
-          <div id="icon"><img id="info" src="images/tooltip.png" alt="#" />
+          <div id="icon"><img id="info" src="tooltip.png" alt="#" />
           </div>
 
           <div class="errorDiv">
@@ -95,7 +95,7 @@
         </div>
 
         <div class="formcontrol">
-          <label for="email"><span class="redStar">*</span><span    class="placeHolder" id="eg_email">john.doe@example.com</span>Email Address:</label>
+          <label for="email"><span class="redStar">*</span>Email Address:</label>
 
           <input class="fieldToTest plcHolder" required type="email" name="email" id="email" />
 
