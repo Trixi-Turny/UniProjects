@@ -176,19 +176,19 @@ select{
 }
 
 
- label.radio{
+/* label.radio{
 
 	margin-top:-.4em ;
 	text-align: right ;
 	color: #152951;
-}
+}*/
 
-
+/*
 input[type=radio]{
 
 	width: 5% ;
 }
-
+*/
 input[type=submit]{
 
 
@@ -212,8 +212,18 @@ input[type=submit]{
 	margin-bottom: 1.5em ;
 }
 
+label.error{
+text-align: left;
+width: 37%;
+float: right;
+overflow: visible;
+padding: 0;
+font-size:large;
 
-.errorDiv{
+}
+
+
+/*.errorDiv{
 
  float: right;
  width: 39%;
@@ -222,10 +232,10 @@ input[type=submit]{
  overflow: visible;
 
 }
+*/
 
 
-
-#fnameValid, #snameValid, #telValid, #emailValid, #hanValid, #fnameRequired, #snameRequired, #emailRequired, #hanRequired{
+/*#fnameValid, #snameValid, #telValid, #emailValid, #hanValid, #fnameRequired, #snameRequired, #emailRequired, #hanRequired{
   display: none;
   text-align: left;
   width: 100%;
@@ -234,18 +244,29 @@ input[type=submit]{
   color: #FF0000 ;  
 
 
-}
+}*/
 
 
+::-webkit-input-placeholder{
 
-
-.placeHolder{
-
-  display: none;
-
+  font-style: italic ;
 
 }
 
+:-moz-placeholder {
+   font-style: italic ;
+}
+
+
+::-moz-placeholder{
+   font-style: italic ;
+
+}
+:-ms-input-placeholder{
+  font-style: italic ;
+
+}
+	
 span.redStar{
 
 
