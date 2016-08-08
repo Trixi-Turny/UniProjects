@@ -7,7 +7,7 @@ var validationLogic=[
 
 ]
 
-function init() {
+$ document.ready(function(){
 
   toolTip(); 
   addEventListeners();
@@ -245,7 +245,7 @@ function showErrorMsg(element, errorValid) {
 
 
 }
+});
 
 
-
-window.onload = init;
+// window.onload = init;

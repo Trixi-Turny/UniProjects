@@ -43,7 +43,7 @@ function clearForm() {
   clearButton.addEventListener("click", function(event) {
 
     for(var i=0; i<validationLogic.length ; i++){
-     inputElement=document.getElementById(validationLogic[i].id) ;
+     var inputElement=document.getElementById(validationLogic[i].id) ;
      inputElement.value="" ;
      hideErrorMsg(inputElement) ;
      placeHolderLoad();
